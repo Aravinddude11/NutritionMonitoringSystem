@@ -1,0 +1,342 @@
+@import url("https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600&display=swap");
+
+:root {
+  --underweight: orange;
+  --normal: green;
+  --overweight: lightcoral;
+  --obese: crimson;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Jost", sans-serif;
+}
+
+body {
+  background:whitesmoke;
+  display: grid;
+  place-items: center;
+  height: 100vh;
+}
+.navbar {
+    background-color: #f8f9fa; /* Set your desired background color */
+    position:fixed;
+}
+.navbar-brand {
+    font-weight: 700; /* Make the brand text bold */
+    margin-left: 10px; /* Move the brand text to the left */
+}
+.navbar-nav .nav-link {
+    padding-right: 15px;
+    padding-left: 15px;
+}
+html {
+    scroll-behavior: smooth; /* Enable smooth scrolling */
+}
+#nutritionalvalues{
+    padding-top: 60px;
+}
+#BMIcalc{
+    padding-top: 60px;
+}
+#FAQ{
+    padding-top: 60px;
+}
+  h1 {
+    font-family: 'Arial', sans-serif; /* Font style */
+    font-size: 48px; /* Font size */
+    font-weight:bold;
+    color: #010a01d4; /* Text color */
+    text-align: center; /* Center the text */
+    margin: 20px; /* Remove default margin */
+    text-transform: uppercase; /* Uppercase letters */
+    letter-spacing: 0.3px; /* Space between letters */
+    padding-bottom: 15px; /* Space below the text */
+}
+  .inputstyle {
+    padding: 20px !important;
+  }
+  
+  .whoop {
+    background-color: #5fd068;
+    width: 8em;
+    font-size: 30px !important;
+    color: #ffffff;
+  }
+  .highlight {
+    color: #ff5733; /* Change this to your desired color */
+    font-weight: bold; /* Make the text bold for better visibility */
+    background-color: #fff3cd; /* Optional: add a background color */
+    padding: 2px 4px; /* Optional: add some padding for better spacing */
+    border-radius: 4px; /* Optional: add rounded corners */
+}
+  .caloriescont {
+    background-color: #ffffff;
+    padding: 30px;
+  }
+  
+  .caloriescont ul {
+    padding: 0px;
+  }
+  
+  .caloriescont ul li {
+    list-style: none;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #efefef;
+    width: 80%;
+  }
+  
+  .caloriescont h3 {
+    color: #4b8673;
+    font-size: 2em;
+    text-transform: capitalize;
+    font-weight: 700;
+  }
+  
+  .caloriescont h5 {
+    color: #4b8673;
+  }
+  
+  .servingsize {
+    background-color: #000000;
+    padding: 10px;
+    color: #ffffff;
+  }
+
+
+
+
+  #BMIcalc{
+    width: 100%;
+    max-width: 500px;
+  }
+  .bodymasscontainer {
+    width: 90%;
+    max-width: 420px;
+    background: #fff;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.25);
+    display: grid;
+    gap: 1rem;
+  }
+
+  .calculator {
+    display: grid;
+    gap: 1rem;
+  }
+  
+  .calculator div {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .calculator label {
+    flex: 0 1 120px;
+    font-weight: 600;
+  }
+  
+  .calculator .box {
+    flex: 1;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    outline-color: #555;
+    font-size: 1.25rem;
+    text-align: center;
+  }
+  
+  .calculator button {
+    width: 50%;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    background: #857e05dc;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  .calculator button[type="reset"] {
+    background: #852a20da;
+  }
+  
+  .calculator button:hover {
+    filter: brightness(120%);
+  }
+  
+  .output {
+    text-align: center;
+  }
+
+
+  .output #bmi {
+    font-size: 4rem;
+  }
+  
+  .output #desc strong {
+    text-transform: uppercase;
+  }
+  
+  .bmi-scale {
+    display: flex;
+  }
+  
+  .bmi-scale div {
+    flex: 1;
+    text-align: center;
+    text-transform: uppercase;
+    border-top: 5px solid var(--color);
+    padding: 10px;
+  }
+  
+  .bmi-scale h4 {
+    font-size: 0.75rem;
+    color: slategray;
+  }
+  
+  .underweight {
+    color: var(--underweight);
+  }
+  
+  .healthy {
+    color: var(--normal);
+  }
+  
+  .overweight {
+    color: var(--overweight);
+  }
+  
+  .obese {
+    color: var(--obese);
+  }
+  
+  #info {
+      width: 100%;
+      padding: 25px 14px 20px;
+    }
+    
+    #info h3 {
+      font-size: 19px;
+      font-weight: bold;
+      margin: 1em 0;
+    }
+    
+    #info p, span {
+      margin: 5px 0 8px 0;
+      font-size: 16px;
+      color: #040000c6;
+    }
+    
+    #info table.cinfoT {
+      width: 342px;
+      max-width: 100%;
+      align-content: center;
+      border-collapse: collapse;
+      border-spacing: 0;
+      margin: 2em auto;
+    }
+    
+    #info table.cinfoT, #info table.cinfoT tbody {
+      border-radius: 3px;
+      overflow: hidden;
+    }
+    
+    #info table.cinfoT th, table.cinfoT td.cinfoHd, table.cinfoT td.cinfoHdL {
+      background-color: #2a3338;
+      font-weight: bold;
+      color: #040000c6;
+      padding: 5px 3px;
+    }
+    
+    #info table.cinfoT td {
+      text-align: center;
+      padding: 10px 0px;
+      border: 1px solid #8500ff;
+      color: whitesmoke;
+    }
+    
+    #info table.cinfoT tr:nth-child(odd) {
+      background-color: #3d4449;
+    }
+    
+    #info table.cinfoT tr:nth-child(even) {
+      background-color: #2a3338;
+    }
+    
+    #info table.cinfoTS td.cinfoHd {
+      font-size: 13px;
+    }
+    
+    #info table.cinfoTS td.cinfoHdL {
+      font-size: 13px;
+    }
+    
+    #info table.cinfoTS td {
+      font-size: 13px;
+      padding: 3px 1px;
+    }
+    
+    #info ul {
+      width: 99%;
+      padding: 7px 14px 7px 28px;
+    }
+    
+    #info ul li {
+      width: 100%;
+    }
+
+    #container{
+        margin: 0 auto;
+        width: 60%;
+    }
+    .subcontainer{
+        background-color: #fff;
+        color:#000;
+        margin:20px;
+        padding:30px;
+        border-radius:10px;
+    }
+    .subcontainer .subhead{
+        text-align:center;
+        margin-bottom:20px;
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+    .subcontainer .block .question{
+        font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-size:18px;
+        padding:10px 0;
+        border-bottom: 1px solid #000;
+        margin-bottom:20px;
+        cursor:pointer;
+        position:relative;
+    }
+    .subcontainer .block .question::after{
+        content:'+';
+        position:absolute;
+        right:-5px;
+    }
+    .subcontainer .block .answer{
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        line-height:1.5;
+        width:100%;
+        height:0px;
+        overflow:hidden;
+        transition:.5s;
+    }
+    .subcontainer .block.active .answer{
+        height:100px;
+    }
+    .subcontainer .block.active .question{
+        font-size:18px;
+        transition:.5s;
+    }
+    .subcontainer .block.active .question::after{
+        content:'-';
+        font-size:20px;
+        transition:.5s;
+    }
