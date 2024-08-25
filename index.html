@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Health Fusion</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous" />
+    <link href="styles.css" rel="stylesheet" />
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold ms-3" href="#">NUTRITION MONITORING SYSTEM</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#nutritionalvalues">Nutrition Overview</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#BMIcalc">BMI Calculator</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#FAQ">FAQ</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Content Sections -->
+<main id="nutritionalvalues">
+    <div id="calorie-finder" class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8 text-center">
+                <h1>Food Nutritional Values</h1>
+                <form>
+                    <div class="input-group input-group-lg mb-5">
+                        <input type="text" name="query" class="form-control inputstyle" id="input"
+                            placeholder="search for Nutritional values in your food..." required>
+                        <button class="btn whoop" type="submit" id="button-addon2">Find calories</button>
+                    </div>
+                </form>
+                <div class="alert alert-warning" style="display: none;"></div>
+            </div>
+            <div class="row justify-content-center mt-5 mb-5">
+                <div class="col-md-10 caloriescont shadow rounded">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h2 class="mt-3 mb-4">Nutritional Values </h2><span></span>
+                            <ul>
+                                <li class="servingsize">Serving Size per 100/Grams <span class="float-end"></span></li>
+                                <li>Carbohydrates: <span class="float-end">0.00</span></li>
+                                <li>Cholesterol: <span class="float-end">0.00</span></li>
+                                <li>Saturated fat: <span class="float-end">0.00</span></li>
+                                <li>Total Fat: <span class="float-end">0.00</span></li>
+                                <li>Fiber Content: <span class="float-end">0.00</span></li>
+                                <li>Potassium: <span class="float-end">0.00</span></li>
+                                <li>Sodium: <span class="float-end">0.00</span></li>
+                                <li>Sugar: <span class="float-end">0.00</span></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6 mb-5">
+                            <h4 class="mt-3 mb-4">To burn the <span class="item-name"></span> calories you will have to</h4>
+                            <div class="d-flex align-items-center mb-5">
+                                <div class="flex-shrink-0">
+                                    <img src="walking.png" alt="...">
+                                </div>
+                                <div class="flex-grow-1 ms-3">
+                                    <h5> Jog </h5>
+                                    <p>you will have to jog for <strong class="jog-time">0</strong> Minutes</p>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center mb-5">
+                                <div class="flex-shrink-0">
+                                    <img src="yoga.png" alt="...">
+                                </div>
+                                <div class="flex-grow-1 ms-4">
+                                    <h5> Do Power Yoga </h5>
+                                    <p>you will have to do Power Yoga for <strong class="yoga-time">0</strong> Minutes</p>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center mb-5">
+                                <div class="flex-shrink-0">
+                                    <img src="weightlifter.png" alt="...">
+                                </div>
+                                <div class="flex-grow-1 ms-4">
+                                    <h5>Get a Gym Workout </h5>
+                                    <p>you will have to lift weights for <strong class="gym-time">0</strong> Minutes</p>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center">
+                                <div class="flex-shrink-0">
+                                    <img src="walking.png" alt="...">
+                                </div>
+                                <div class="flex-grow-1 ms-1">
+                                    <h5> Go for a Brisk Walk </h5>
+                                    <p>you will have to brisk walk for <strong class="walk-time">0</strong> Minutes</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<main id="BMIcalc">
+    <div class="bodymasscontainer">
+        <h1>BMI Calculator</h1>
+  
+        <form class="calculator">
+          <div>
+              <label for="Gender">Gender</label>
+              <select id="gender_field" class="box" required>
+                  <option selected value="">select gender</option>
+                  <option value="male">Male</option>
+                  <option value="female">Female</option>
+                  <option value="non-binary">Non-binary</option>
+              </select>
+            </div>
+          <div>
+              <label for="Age">Age</label>
+              <input type="number" id="Age" min="0" step="1" value="" class="box"/>
+            </div>
+          <div>
+            <label for="weight">Weight (kg)</label>
+            <input type="number" id="weight" min="0" step="0.01" value="" class="box"/>
+          </div>
+  
+          <div>
+            <label for="height">Height (cm)</label>
+            <input type="number" id="height" min="0" step="0.01" value="" class="box"/>
+          </div>
+  
+          <div>
+            <button type="reset" id="resetbmi">Reset</button>
+            <button type="submit" id="submitbmi">Submit</button>
+          </div>
+        </form>
+        <section class="output">
+          <h3>Your BMI is</h3>
+          <p id="bmi"></p>
+          <p id="desc">N/A</p>
+        </section>
+  
+        <section class="bmi-scale">
+          <div style="--color: var(--underweight)">
+            <h4>Underweight</h4>
+            <p>&lt; 18.5</p>
+          </div>
+  
+          <div style="--color: var(--normal)">
+            <h4>Normal</h4>
+            <p>18.5 – 25</p>
+          </div>
+  
+          <div style="--color: var(--overweight)">
+            <h4>Overweight</h4>
+            <p>25 – 30</p>
+          </div>
+  
+          <div style="--color: var(--obese)">
+            <h4>Obese</h4>
+            <p>≥ 30</p>
+          </div>
+        </section>
+      </div>
+</main>
+      <section id="info">
+          <h3>BMI introduction</h2>
+          <p>BMI, or Body Mass Index, is a measure used to determine whether a person has a healthy body weight for their height by calculating their tissue mass. This value helps categorize individuals as underweight, normal weight, overweight, or obese. Although BMI is not a perfect measure, it serves as a useful indicator for assessing potential health risks and the need for further evaluation. Refer to the table below to see the different categories based on BMI that are used by the calculator.</p>
+          
+          <h3>BMI Classification for Adults</h3>
+          <p>The World Health Organization (WHO) provides recommended BMI values to determine body weight for adults. These guidelines apply to both men and women aged 20 and above.</p>
+          <table class="cinfoT" align="center">
+            <tbody>
+              <tr>
+                <td class="cinfoHd">Classification</td>
+                <td class="cinfoHdL">BMI range - kg/m<sup>2</sup></td>
+              </tr>
+              <tr>
+                <td>Severe Thinness</td>
+                <td align="center">&lt;&nbsp; 16</td>
+              </tr>
+              <tr>
+                <td>Moderate Thinness</td>
+                <td align="center">16 - 17</td>
+              </tr>
+              <tr>
+                <td>Mild Thinness</td>
+                <td align="center">17 - 18.5</td>
+              </tr>
+              <tr>
+                <td>Normal</td>
+                <td align="center">18.5 - 25</td>
+              </tr>
+              <tr>
+                <td>Overweight</td>
+                <td align="center">25 - 30</td>
+              </tr>
+              <tr>
+                <td>Obese Class I</td>
+                <td align="center">30 - 35</td>
+              </tr>
+              <tr>
+                <td>Obese Class II</td>
+                <td align="center">35 - 40</td>
+              </tr>
+              <tr>
+                <td>Obese Class III</td>
+                <td align="center">&gt;&nbsp; 40</td>
+              </tr>
+            </tbody>
+          </table>
+          
+          <h3>BMI Categories for Children and Teens (Ages 2-20)</h3>
+          <p>The Centers for Disease Control and Prevention (CDC) provides BMI categories for children and teens aged 2 to 20.</p>
+          <table class="cinfoT" align="center">
+            <tbody>
+              <tr>
+                <td class="cinfoHd">Category</td>
+                <td class="cinfoHdL">Percentile Range</td>
+              </tr>
+              <tr>
+                <td>Underweight</td>
+                <td align="center">&lt;&nbsp;5%</td>
+              </tr>
+              <tr>
+                <td>Healthy weight</td>
+                <td align="center">5% - 85%</td>
+              </tr>
+              <tr>
+                <td>At risk of overweight</td>
+                <td align="center">85% - 95%</td>
+              </tr>
+              <tr>
+                <td>Overweight</td>
+                <td align="center">&gt;&nbsp;95%</td>
+              </tr>
+            </tbody>
+          </table>
+          
+          <h3>Risks associated with being overweight</h3>
+          <p>Being overweight increases the risk of a number of serious diseases and health conditions. Below is a list of said risks, according to the Centers for Disease Control and Prevention (CDC):</p>
+          <ul>
+            <li>High blood pressure</li>
+            <li>Type II diabetes</li>
+            <li>Coronary heart disease</li>
+            <li>Sleep apnea and breathing problems</li>
+            <li>Certain cancers (endometrial, breast, colon, kidney, gallbladder, liver)</li>
+            <li>Low quality of life</li>
+            <li>Mental illnesses such as clinical depression, anxiety, and others</li>
+            <li>Generally, an increased risk of mortality compared to those with a healthy BMI</li>
+          </ul>
+          <p>As can be seen from the list above, there are numerous negative, in some cases fatal, outcomes that may result from being overweight. Generally, a person should try to maintain a BMI below 25 kg/m2, but ideally should consult their doctor to determine whether or not they need to make any changes to their lifestyle in order to be healthier.</p>
+          
+          <h3>Risks associated with being underweight</h3>
+          <p>Being underweight has its own associated risks, listed below:</p>
+          <ul>
+            <li>Malnutrition, vitamin deficiencies, anemia (lowered ability to carry blood vessels)</li>
+            <li>Osteoporosis, a disease that causes bone weakness, increasing the risk of breaking a bone</li>
+            <li>A decrease in immune function</li>
+            <li>Growth and development issues, particularly in children and teenagers</li>
+            <li>Potential complications as a result of surgery</li>
+            <li>Generally, an increased risk of mortality compared to those with a healthy BMI</li>
+          </ul>
+          <p>In some cases, being underweight can be a sign of some underlying condition or disease such as anorexia nervosa, which has its own risks. Consult your doctor if you think you or someone you know is underweight, particularly if the reason for being underweight does not seem obvious.</p>
+          
+          <h3>Limitations of BMI</h3>
+          <p>Although BMI is a widely used and useful indicator of healthy body weight, it does have its limitations. BMI is only an estimate that cannot take body composition into account. Due to a wide variety of body types as well as distribution of muscle, bone mass, and fat, BMI should be considered along with other measurements rather than being used as the sole method for determining a person's healthy body weight.</p>
+          <p><b>In adults:</b></p>
+          <p>BMI cannot be fully accurate because it is a measure of excess body weight, rather than excess body fat. BMI is further influenced by factors such as age, sex, ethnicity, muscle mass, body fat, and activity level, among others.</p>
+          <ul>
+            <li>Older adults tend to have more body fat than younger adults with the same BMI.</li>
+            <li>Women tend to have more body fat than men for an equivalent BMI.</li>
+          </ul>
+          <p><b>In children and adolescents:</b></p>
+          <p>The same factors that limit the efficacy of BMI for adults can also apply to children and adolescents. Additionally, height and level of sexual maturation can influence BMI and body fat among children. BMI is a better indicator of excess body fat for obese children than it is for overweight children.</p>
+          <p>That being said, BMI is fairly indicative of body fat for 90-95% of the population, and can effectively be used along with other measures to help determine an individual's healthy body weight.</p>
+</section>
+
+<main id="FAQ">
+    <div id="container">
+        <div class="subcontainer">
+        <h2 class="subhead">Frequently Asked Questions</h2>
+        <div class="block">
+            <div class="question">
+                How do nutritional values support growth and development?
+            </div>
+            <div class="answer">
+                Understanding nutritional values allows individuals to make informed choices about portion sizes and food types, which can aid in maintaining a healthy weight. Foods that are nutrient-dense but lower in calories can help individuals feel full without overeating. 
+            </div>
+        </div>
+        <div class="block">
+            <div class="question">
+                Can nutritional values improve energy levels?
+            </div>
+            <div class="answer">
+                Yes, nutritional values indicate how different foods provide energy. Carbohydrates are the primary energy source, while proteins and fats also contribute. A balanced intake ensures sustained energy levels throughout the day, supporting daily activities.
+            </div>
+        </div>
+        <div class="block">
+            <div class="question">
+                How can I use nutritional values to improve my diet?
+            </div>
+            <div class="answer">
+                By understanding nutritional values, individuals can plan meals that are balanced and rich in essential nutrients. This includes focusing on whole, minimally processed foods, adequate protein intake, and limiting saturated fats and added sugars.
+            </div>
+        </div>
+        <div class="block">
+            <div class="question">
+                Is it necessary to count calories?
+            </div>
+            <div class="answer">
+                Counting calories can be helpful for some people, especially those looking to lose weight or manage specific health conditions. However, it’s not necessary for everyone. Focusing on the quality of food and listening to your body’s hunger cues can also lead to a healthy diet. 
+            </div>
+        </div>
+        <div class="block">
+            <div class="question">
+                Why is BMI important for health?
+            </div>
+            <div class="answer">
+                BMI is a useful screening tool that helps assess whether an individual has a healthy body weight for their height. It can indicate potential health risks associated with being underweight, overweight, or obese, such as heart disease, type 2 diabetes, and high blood pressure
+            </div>
+        </div>
+        <div class="block">
+            <div class="question">
+                How can food nutrition values help manage BMI?
+            </div>
+            <div class="answer">
+                Understanding food nutrition values enables individuals to make healthier food choices that can help achieve or maintain a healthy BMI. By selecting nutrient-dense foods and monitoring caloric intake, individuals can manage their weight more effectively.
+            </div>
+        </div>
+        <div class="block">
+            <div class="question">
+                Is BMI a perfect measure of health?
+            </div>
+            <div class="answer">
+                No, BMI has limitations. It does not account for muscle mass, bone density, or fat distribution. For example, athletes may have a high BMI due to muscle rather than excess fat. Therefore, it should be used alongside other assessments to evaluate health.
+            </div>
+        </div>
+        </div>
+    </div>
+</main>
+    <script src="script.js"></script>
+</body>
+</html>
